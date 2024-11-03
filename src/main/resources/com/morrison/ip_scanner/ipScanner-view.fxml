@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.morrison.ip_scanner.IpScannerController">
+    <!-- Top Section -->
+    <top>
+        <HBox alignment="CENTER" spacing="10" style="-fx-background-color: #3f51b5; -fx-padding: 10px;">
+            <Label text="IP Scanner" style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+        </HBox>
+    </top>
+
+    <!-- Left Section -->
+    <left>
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #f4f4f4; -fx-padding: 10px;">
+            <TableView fx:id="table" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="IP Address" fx:id="ipColumn" prefWidth="150"/>
+                    <TableColumn text="MAC Address" fx:id="macColumn" prefWidth="200"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </left>
+
+    <!-- Center Section -->
+    <center>
+        <VBox style="-fx-padding: 10px;">
+            <!-- Top Buttons Section -->
+            <HBox spacing="10" alignment="CENTER" style="-fx-padding: 20px;">
+                <Button fx:id="firstScanButton" text="First Scan"/>
+                <Button fx:id="secondScanButton" text="Next Scan"/>
+                <Button fx:id="moveSelectedButton" text="Move Selected"/>
+                <Button fx:id="cleanSavedIps" text="Clean Marked Ips"/>
+
+            </HBox>
+
+            <VBox spacing="10" style="-fx-padding: 20px;">
+                <Label text="First IP:"/>
+                <HBox spacing="10">
+                    <TextField fx:id="start_ip_1"
+                               style="-fx-pref-width: 50px; -fx-pref-height: 40px; -fx-font-size: 16px"/>
+                    <Text>.</Text>
+                    <TextField fx:id="start_ip_2"
+                               style="-fx-pref-width: 50px; -fx-pref-height: 40px; -fx-font-size: 16px"/>
+                    <Text>.</Text>
+                    <TextField fx:id="start_ip_3"
+                               style="-fx-pref-width: 50px; -fx-pref-height: 40px; -fx-font-size: 16px"/>
+                    <Text>.</Text>
+                    <TextField fx:id="start_ip_4"
+                               style="-fx-pref-width: 50px; -fx-pref-height: 40px; -fx-font-size: 16px"/>
+                </HBox>
+            </VBox>
+
+            <VBox spacing="10" style="-fx-padding: 20px;">
+                <Label text="Last IP:"/>
+                <HBox spacing="10">
+                    <TextField fx:id="end_ip_1"
+                               style="-fx-pref-width: 50px; -fx-pref-height: 40px; -fx-font-size: 16px"/>
+                    <Text>.</Text>
+                    <TextField fx:id="end_ip_2"
+                               style="-fx-pref-width: 50px; -fx-pref-height: 40px; -fx-font-size: 16px"/>
+                    <Text>.</Text>
+                    <TextField fx:id="end_ip_3"
+                               style="-fx-pref-width: 50px; -fx-pref-height: 40px; -fx-font-size: 16px"/>
+                    <Text>.</Text>
+                    <TextField fx:id="end_ip_4"
+                               style="-fx-pref-width: 50px; -fx-pref-height: 40px; -fx-font-size: 16px"/>
+                </HBox>
+            </VBox>
+
+            <!-- Progress Bar -->
+            <ProgressBar fx:id="progressBar" maxWidth="Infinity" progress="0" style="-fx-padding: 5px;"/>
+
+            <!-- Spacer to push the table to the bottom -->
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <!-- Bottom Table Section -->
+            <TableView fx:id="table_2">
+                <columns>
+                    <TableColumn text="IP Address" fx:id="ipColumn_2" prefWidth="405"/>
+                    <TableColumn text="MAC Address" fx:id="macColumn_2" prefWidth="405"/>
+
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
